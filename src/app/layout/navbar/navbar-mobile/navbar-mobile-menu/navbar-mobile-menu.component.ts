@@ -4,6 +4,7 @@ import { SubMenuItem } from '../../../../core/models/menu.model';
 import { NgClass, NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { NavbarMobileSubmenuComponent } from '../navbar-mobile-submenu/navbar-mobile-submenu.component';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 @Component({
   selector: 'app-navbar-mobile-menu',
@@ -16,6 +17,7 @@ import { NavbarMobileSubmenuComponent } from '../navbar-mobile-submenu/navbar-mo
     RouterLinkActive,
     NgIf,
     NavbarMobileSubmenuComponent,
+    AngularSvgIconModule
   ],
   templateUrl: './navbar-mobile-menu.component.html',
   styleUrl: './navbar-mobile-menu.component.scss'

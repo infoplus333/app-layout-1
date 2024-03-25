@@ -4,6 +4,7 @@ import { MenuService } from '../../services/menu.service';
 import { NgClass, NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { SidebarSubmenuComponent } from '../sidebar-submenu/sidebar-submenu.component';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 @Component({
   selector: 'app-sidebar-menu',
@@ -16,6 +17,7 @@ import { SidebarSubmenuComponent } from '../sidebar-submenu/sidebar-submenu.comp
         RouterLinkActive,
         NgIf,
         SidebarSubmenuComponent,
+        AngularSvgIconModule
   ],
   templateUrl: './sidebar-menu.component.html',
   styleUrl: './sidebar-menu.component.scss'
@@ -23,7 +25,7 @@ import { SidebarSubmenuComponent } from '../sidebar-submenu/sidebar-submenu.comp
 export class SidebarMenuComponent {
   constructor(public menuService: MenuService) {}
 
-  public toggleMenu(subMenu: SubMenuItem) {
+  public toggleMenu(subMenu: SubMenuItem) {    
     this.menuService.toggleMenu(subMenu);
   }
 }

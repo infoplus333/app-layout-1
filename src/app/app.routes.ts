@@ -6,7 +6,9 @@ import { DictionaryComponent } from './modules/dictionary/dictionary.component';
 
 export const routes: Routes = [
     {
-        path: '', component: LayoutComponent, pathMatch: 'full'
+        path: '', component: LayoutComponent, children: [
+            {path: 'dictionary', component: DictionaryComponent}
+        ]
     },
     {
         path: '', component: DictionaryComponent
