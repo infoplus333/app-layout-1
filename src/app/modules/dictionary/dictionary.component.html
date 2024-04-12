@@ -1,52 +1,49 @@
 
-<div class="grid grid-cols-4 gap-4">
-    <div class="max-w p-6 bg-background rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 basis-1/4">
-        <a href="#">
-            <h5 class="font-semibold text-foreground pb-1">Noteworthy technology acquisitions 2021</h5>
-        </a>
-        <p class="space-x-1 text-xs font-medium text-muted-foreground pb-3">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-primary rounded-lg focus:ring-4">
-            Read more
-            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-            </svg>
-        </a>
-    </div>
-    <div class="max-w p-6 bg-background rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 basis-1/4">
-        <a href="#">
-            <h5 class="font-semibold text-foreground pb-1">Noteworthy technology acquisitions 2021</h5>
-        </a>
-        <p class="space-x-1 text-xs font-medium text-muted-foreground pb-3">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-primary rounded-lg focus:ring-4">
-            Read more
-            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-            </svg>
-        </a>
-    </div>
-    <div class="max-w p-6 bg-background rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 basis-1/4">
-        <a href="#">
-            <h5 class="font-semibold text-foreground pb-1">Noteworthy technology acquisitions 2021</h5>
-        </a>
-        <p class="space-x-1 text-xs font-medium text-muted-foreground pb-3">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-primary rounded-lg focus:ring-4">
-            Read more
-            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-            </svg>
-        </a>
-    </div>
-    <div class="max-w p-6 bg-background rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 basis-1/4">
-        <a href="#">
-            <h5 class="font-semibold text-foreground pb-1">Noteworthy technology acquisitions 2021</h5>
-        </a>
-        <p class="space-x-1 text-xs font-medium text-muted-foreground pb-3">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-primary rounded-lg focus:ring-4">
-            Read more
-            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-            </svg>
-        </a>
-    </div>
+<div class="card">
+  <p-table
+      [paginator]="true"
+      [rows]="5"
+      [showCurrentPageReport]="true"
+      [tableStyle]="{ 'min-width': '50rem' }"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+      [rowsPerPageOptions]="[5, 10, 20]"
+  >
+      <ng-template pTemplate="header">
+          <tr>
+              <th class="text-sm" style="width:25%">Name</th>
+              <th class="text-sm" style="width:25%">Country</th>
+              <th class="text-sm" style="width:25%">Company</th>
+              <th class="text-sm" style="width:25%">Representative</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-customer>
+          <tr>
+              <td class="text-sm">name</td>
+              <td class="text-sm">country</td>
+              <td class="text-sm">company</td>
+              <td class="text-sm">representative</td>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="paginatorleft">
+          <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+      </ng-template>
+      <ng-template pTemplate="paginatorright">
+          <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+      </ng-template>
+  </p-table>
+</div>
+<div class="card flex flex-wrap justify-content-center gap-3 mt-2">
+  <p-iconField iconPosition="right">
+      <p-inputIcon>
+        <svg-icon src="assets/icons/heroicons/outline/search.svg" [svgClass]="'h-5 w-5'"> </svg-icon>
+      </p-inputIcon>
+      <input type="text" pInputText placeholder="Search" />
+  </p-iconField>
+  <p-iconField iconPosition="right">
+      <p-inputIcon styleClass="pi pi-spinner pi-spin" />
+      <input type="text" pInputText />
+  </p-iconField>
 </div>
 
+<p-dropdown class="mt-4" optionLabel="name" [showClear]="true" placeholder="Select a City"></p-dropdown>
+<p-chips [(ngModel)]="values" ></p-chips>
